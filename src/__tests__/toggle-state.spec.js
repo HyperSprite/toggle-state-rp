@@ -14,7 +14,7 @@ const TestItem = (
   />
 );
 
-describe('ToggleState', () => {
+describe('ToggleState state and methods', () => {
   let wrapper;
   beforeEach(() => {
     wrapper = shallow(TestItem);
@@ -31,5 +31,14 @@ describe('ToggleState', () => {
     expect(wrapper.state().toggle).toBe(false);
     wrapper.instance().handleToggle();
     expect(wrapper.state().toggle).toBe(true);
+  });
+});
+
+describe('ToggleState Props', () => {
+  const wrapper = shallow(<ToggleState initialState render={toggleStateRP => toggleStateRP} />);
+  it('Accepts "initialState" as state', () => {
+    expect(wrapper.state().toggle).toBe(true);
+    wrapper.instance().handleToggle();
+    expect(wrapper.state().toggle).toBe(false);
   });
 });

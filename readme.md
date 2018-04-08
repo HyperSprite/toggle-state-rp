@@ -1,124 +1,74 @@
 # Toggle State Render Props Component
 
-Handles the toggle state for its children
+> This is a Render Prop Component which was introduced by [Michael Jackson](https://twitter.com/mjackson) of [react-router](https://github.com/ReactTraining/react-router) fame.
+See [Official React Render Props docs](https://reactjs.org/docs/render-props.html) for more information.
 
-Returned props:
+Accepts an initialState and passes as props: a `toggle` boolean state and three functions to update the `toggle` state. 
 
-* toggle:  true || false
-* handleClose: function, always sets toggle to false
-* handleOpen: function, always sets toggle to true
-* handleToggle: function, toggles last value
+## Usage
 
 ### Install
-```npm install --save @hypersprite/toggle-state-rp```
+`npm install --save @hypersprite/toggle-state-rp`
 
 ### Import
-```import OpenState from '@hypersprite/toggle-state-rp';```
+`import ToggleState from '@hypersprite/toggle-state-rp';`
 
 ## Usage
 Place child component inside function return and use the parameters.
 
+parent-container.jsx
 ```js
-<OpenState
-  render={toggleStateRP => (
-    <DialogMessage
-      {...toggleStateRP}
-      otherProp={this.props.otherPropsOne}
+// some place in our component, you need a DialogMessage
+
+    <ToggleState
+      initialState
+      render={toggleStateRP => (
+        <DialogMessage
+          {...toggleStateRP}
+        />
+      )}
     />
-  )}
-/>
 ```
 
-> This example assumes a dialog component with some buttons inside looking for "toggle" and some handler functions
-
-## Testing and Deployment
-
-* Testing includes Jest testing with Enzyme for mounting and rendering and Instamatic for coverage reporting.
-* Linting provided by ESlint with AirBnB presets.
-* Modern JavaScript and JSX via babel.
-* Git pre-commit hooks to keep everyone honest.
-
-### Setup
-```bash
-git clone https://github.com/HyperSprite/toggle-state-rp.git
-cd toggle-state-rp
-npm install
-```
-
-### Adding package to local app for development
-
-npm uses the package name for the module directory placement, not the folder name or repo name, even though they are usually the same.
-Open package.json and check the name, in this case:
-  "name": "@hypersprite/toggle-state-rp",
-
-Assuming you have a flat folder structure:
-
-Run link from inside your working app
-```bash
-npm link ../toggle-state-rp
-```
-
-If you look in node_modules, you will now see a directory called ```@hypersprite``` with a sub directory ```toggle-state-rp```
-
-You can use your local version inside your app as if it was a published module
+dialog-message.jsx
 ```js
-import OpenStateRP from '@hypersprite/toggle-state-rp';
+const DialogMessage = ({ toggle, handleToggle }) => {
+  return (
+    <div>
+      <p>
+        {`Toggle is: ${toggle}`}
+      </p>
+      <button onClick={handleToggle}>Toggle</button>
+    </div>
+  );
+};
 ```
 
-If you run install or update on your working app, you will need to rerun the link command. If you are doing this a lot, you could make an npm script for it in your package.json to run after installs, something like:
+### scripts
 
-package.json
-```json
-"scripts": {
-  "localmodules": "npm link ../toggle-state-rp && npm link ../some-other-local-project"
-}
-```
+use `npm run <script>`
 
-> This will not work if you need to run sudo to to install npm modules, [see this article here](see this http://justjs.com/posts/npm-link-developing-your-own-npm-modules-without-tears) if you need help fixing that .
+* `lint` - runs linter
+* `test` - runs test
+* `test:dev` - runs test in watch mode
+* `build` - runs build
+* `build:dev` - runs build in watch mode
 
+`npm version <major | minor | patch>`
 
-## Testing
+### API
 
-Testing provided by Jest, Enzyme and coverage report by Istanbul
+#### Receives Props
 
-* ```npm test``` Runs all tests.
-* ```npm run test:dev``` only runs the tests in src in watch mode.
+| prop name | type | values | description |
+| --------- | ---- | ------ | ----------- |
+| initialState | bool | true or false* | Sets initial state ||
 
-## Add+Commit, Version
+#### New Passed Props
 
-> The branch must be clean to version and publish
-
-* Add
-* Commit, which will:
- * Run linting and tests with pre-commit hooks.
-
-```bash
-git commit -am 'some totally useful comment'
-```
-
-Next, we need to Version:
-
-> Note: An initial publish needs a little setup before ```npm version``` will work.
-
-```bash
-// manually build your dst
-npm run build
-// publish your module
-// --access public if this is a scoped module and you want it public
-npm publish --access public
-// delete dst folder
-rm -rf dst
-```
-
-* version, which will:
- * Rerun linting and tests
- * Updates the package.json version numnber based on Major, Minor and Patch
- * Git add package.json using the version number as the commit message
- * Push the changes to Github
- * Transpile the JSX to ES5 with babel into the dst/ directory
- * Publish to npm
- * Delete the dst directory
-
-```bash   
-npm version <major | minor | patch>
-```
+| prop name | type | values | description |
+| --------- | ---- | ------ | ----------- |
+| toggle    | bool | true or false* | The State being toggled |
+| handleFalse | function |  | Call to set toggle to **false** |
+| handleToggle | function |  | Call to toggle toggle |
+| handleTrue | function |  |  Call to set toggle to **true** |

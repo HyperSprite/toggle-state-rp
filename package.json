@@ -23,10 +23,10 @@
     "test:dev": "jest --watch",
     "lint": "eslint src/* .jsx",
     "build": "rm -rf dst && babel src --out-dir dst --ignore spec.js",
-    "build:watch": "npm run build -- -w",
+    "build:dev": "npm run build -- -w",
     "preversion": "npm run test && npm run lint",
     "version": "npm run build",
-    "postversion": "npm publish && rm -rf dst && git push"
+    "postversion": "npm publish && git push"
   },
   "files": [
     "dst"

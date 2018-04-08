@@ -4,9 +4,11 @@
 const dProps = {};
 
 /** external props */
-
+dProps.toggleState = {
+  initialState: false,
+};
 
 /** internal props */
-dProps.toggleState = null;
+
 
 export default dProps;

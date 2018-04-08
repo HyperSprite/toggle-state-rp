@@ -10,10 +10,11 @@ class ToggleState extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      toggle: false,
+      toggle: this.props.initialState,
     };
     this.handleTrue = this.handleTrue.bind(this);
     this.handleFalse = this.handleFalse.bind(this);
+    this.handleToggle = this.handleToggle.bind(this);
   }
 
   handleTrue() {
@@ -41,6 +42,8 @@ class ToggleState extends React.Component {
 ToggleState.propTypes = {
   // eslint-disable-next-line react/no-typos
   render: types.render.isRequired,
+  // eslint-disable-next-line react/no-typos
+  initialState: types.initialState,
 };
 
 ToggleState.defaultProps = {
