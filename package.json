@@ -1,13 +1,13 @@
 {
   "author": "C. Dunavan",
-  "name": "@hypersprite/open-state-rp",
-  "homepage": "https://github.com/HyperSprite/open-state-rp#readme",
+  "name": "@hypersprite/toggle-state-rp",
+  "homepage": "https://github.com/HyperSprite/toggle-state-rp#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/HyperSprite/open-state-rp.git"
+    "url": "git+https://github.com/HyperSprite/toggle-state-rp.git"
   },
   "bugs": {
-    "url": "https://github.com/HyperSprite/open-state-rp/issues"
+    "url": "https://github.com/HyperSprite/toggle-state-rp/issues"
   },
   "keywords": [
     "testing",
@@ -15,7 +15,7 @@
     "basic"
   ],
   "license": "MIT",
-  "description": "'open' state render props controler",
+  "description": "'toggle' state render props controler",
   "main": "dst/index.js",
   "version": "1.0.3",
   "scripts": {
