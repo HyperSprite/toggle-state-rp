@@ -1,9 +1,11 @@
 # Toggle State Render Props Component
 
-> This is a Render Prop Component which was introduced by [Michael Jackson](https://twitter.com/mjackson) of [react-router](https://github.com/ReactTraining/react-router) fame.
+Demo [codesandbox.io...](https://codesandbox.io/s/xp91vq473w)
+
+> This is a Render Prop Component, this style of component was introduced by [Michael Jackson](https://twitter.com/mjackson) of [react-router](https://github.com/ReactTraining/react-router) fame.
 See [Official React Render Props docs](https://reactjs.org/docs/render-props.html) for more information.
 
-Accepts an initialState and passes as props: a `toggle` boolean state and three functions to update the `toggle` state. 
+Accepts an initialState and passes as props: a `toggle` boolean state and three functions to update the `toggle` state.
 
 ## Usage
 
@@ -18,7 +20,7 @@ Place child component inside function return and use the parameters.
 
 parent-container.jsx
 ```js
-// some place in our component, you need a DialogMessage
+// some place in your component, you need a DialogMessage
 
     <ToggleState
       initialState
