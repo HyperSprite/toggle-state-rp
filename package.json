@@ -13,7 +13,7 @@
   },
   "keywords": [
     "state",
-    "react",
+    "react"
   ],
   "license": "MIT",
   "main": "dst/index.js",
