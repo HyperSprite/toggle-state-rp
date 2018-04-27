@@ -46,18 +46,6 @@ const DialogMessage = ({ toggle, handleToggle }) => {
 };
 ```
 
-### Scripts
-
-use `npm run <script>`
-
-* `lint` - runs linter
-* `test` - runs test
-* `test:dev` - runs test in watch mode
-* `build` - runs build
-* `build:dev` - runs build in watch mode
-
-`npm version <major | minor | patch>`
-
 ### API
 
 #### Receives Props

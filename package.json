@@ -12,9 +12,8 @@
     "url": "https://github.com/HyperSprite/toggle-state-rp/issues"
   },
   "keywords": [
-    "testing",
+    "state",
     "react",
-    "basic"
   ],
   "license": "MIT",
   "main": "dst/index.js",
