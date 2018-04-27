@@ -46,7 +46,7 @@ const DialogMessage = ({ toggle, handleToggle }) => {
 };
 ```
 
-### scripts
+### Scripts
 
 use `npm run <script>`
 
