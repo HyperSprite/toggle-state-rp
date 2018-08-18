@@ -1,5 +1,5 @@
 {
-  "version": "1.0.8",
+  "version": "1.0.9",
   "author": "C. Dunavan",
   "name": "@hypersprite/toggle-state-rp",
   "description": "'toggle' state render props controller",
